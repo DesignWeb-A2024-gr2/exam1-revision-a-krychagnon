@@ -59,3 +59,58 @@ article {
 .image img{
     width: 200px;
 }
+
+h2
+    {
+        display: none;
+    }
+
+@media print
+{
+   .pub
+   {
+    display: none;
+   } 
+
+   #main_container
+   {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 120px 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "header header header"
+        ". article ."
+        ". image .";
+
+    padding: none;
+    margin: 0px 0px;
+    }
+
+    .image {
+        padding: none;
+    }
+
+    .article
+    {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 0px;
+    } 
+
+    header
+    {
+        width: 100%;
+
+    }
+
+    h2
+    {
+        display: block;
+    }
+
+}

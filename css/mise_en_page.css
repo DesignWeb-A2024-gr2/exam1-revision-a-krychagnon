@@ -1,0 +1,111 @@
+/* root */
+:root
+{
+    --backMenu: aliceblue;
+    --backArticle: blueviolet;
+}
+
+/* Paramètre généraux */
+html
+{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+*, *::before, *::after
+{
+    box-sizing: inherit;
+}
+
+
+body
+{
+    display: grid;
+    grid-template-columns: 200px 3fr;
+    grid-template-rows: 1fr 4fr 100px;
+    grid-template-areas: 
+                        "zoneHeader zoneHeader"
+                        "zoneNav zoneArticle"
+                        "zoneLogo zoneArticle";
+
+    margin: 0%;
+    height: 100vh;
+}
+
+/* Paramètre de box niveau 0*/
+
+header
+{
+    grid-area: zoneHeader;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+nav
+{
+    grid-area: zoneNav;
+
+    background-color: var(--backMenu);
+}
+
+article
+{
+    grid-area: zoneArticle;
+
+    background-color: var(--backArticle);
+}
+
+footer
+{
+    grid-area: zoneLogo;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--backMenu);
+}
+
+/* Paramètre de box niveau 1 */
+#menuTitre
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    background-color: var(--backMenu);
+}
+
+#pageTitre
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    width: 100%;
+    background-color: var(--backArticle);
+}
+
+/* Paramètre de dernier niveau */
+
+p
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    text-align: justify;
+}
+
+img
+{
+    width: 100px;
+}
